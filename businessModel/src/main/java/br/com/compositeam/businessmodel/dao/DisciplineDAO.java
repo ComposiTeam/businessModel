@@ -1,8 +1,8 @@
-package br.com.compositeam.dao;
+package br.com.compositeam.businessmodel.dao;
 
 import java.util.List;
 
-import br.com.compositeam.model.Discipline;
+import br.com.compositeam.businessmodel.model.Discipline;
 
 public interface DisciplineDAO {
 

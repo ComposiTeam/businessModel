@@ -1,9 +1,9 @@
-package br.com.compositeam;
+package br.com.compositeam.businessmodel;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import br.com.compositeam.dao.DisciplineDAO;
-import br.com.compositeam.model.Discipline;
+import br.com.compositeam.businessmodel.dao.DisciplineDAO;
+import br.com.compositeam.businessmodel.model.Discipline;
 
 /**
  * Hello world!

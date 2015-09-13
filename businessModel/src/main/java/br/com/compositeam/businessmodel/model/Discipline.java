@@ -1,4 +1,4 @@
-package br.com.compositeam.model;
+package br.com.compositeam.businessmodel.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
