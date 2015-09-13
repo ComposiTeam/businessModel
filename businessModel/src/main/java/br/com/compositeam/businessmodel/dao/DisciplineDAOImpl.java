@@ -36,7 +36,10 @@ public class DisciplineDAOImpl implements DisciplineDAO{
 
 	public List<Discipline> list() {
 		// TODO Auto-generated method stub
-		return null;
+		Session session = this.sessionFactory.openSession();
+		List<Discipline> disciplines = session.createCriteria(Discipline.class).list();
+		session.close();
+		return disciplines;
 	}
 	
 	public DisciplineDAO get(){

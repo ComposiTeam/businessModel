@@ -22,7 +22,10 @@ public class Discipline {
 	private String name;
 	
 	
-
+	public Discipline(){
+		
+	}
+	
 	public Discipline(String cod, String name) {
 		super();
 		setCod(cod);
