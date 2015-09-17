@@ -13,6 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import br.com.compositeam.businessmodel.model.Discipline;
+import br.com.compositeam.businessmodel.service.DisciplineService;
 
 @Service
 public class DisciplineDAOImpl implements DisciplineDAO{
@@ -42,10 +43,6 @@ public class DisciplineDAOImpl implements DisciplineDAO{
 		return disciplines;
 	}
 	
-	public DisciplineDAO get(){
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		DisciplineDAO personDAO = context.getBean(DisciplineDAO.class);
-		return personDAO;
-	}
+	
 
 }
