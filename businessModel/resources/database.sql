@@ -10,4 +10,5 @@ CREATE TABLE `gradPlanner`.`User` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NULL,
   `password` VARCHAR(300) NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC));
