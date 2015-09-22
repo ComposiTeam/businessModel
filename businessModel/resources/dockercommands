@@ -1,0 +1,5 @@
+sudo docker run --name mysqldb -d -t -i -e MYSQL_ROOT_PASSWORD=root mysql:5.5
+sudo docker run -it -p 8081:8080 -v /home/gustavo/deployments:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildf
+ly:latest
+sudo docker inspect mysqldb | grep "IPAddress"
+mysql -u root -proot -h $(sudo docker inspect mysqldb | grep "IPAddress" | cut -d"\"" -f4) < database.sql
