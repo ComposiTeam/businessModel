@@ -11,22 +11,19 @@ import br.com.compositeam.businessmodel.model.User;
 
 public class UserDAOImpl implements UserDAO {
 
-private SessionFactory sessionFactory;
-	
-	
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-	
-	
-    
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	public void save(User user) {
 		// TODO Auto-generated method stub
 		Session session = this.sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-        session.persist(user);
-        tx.commit();
-        session.close();
+		Transaction tx = session.beginTransaction();
+		session.persist(user);
+		tx.commit();
+		session.close();
 	}
 
 	public List<User> list() {

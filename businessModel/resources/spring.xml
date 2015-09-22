@@ -9,7 +9,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://172.17.0.5:3306/gradPlanner" />
+		<property name="url" value="jdbc:mysql://172.17.0.2:3306/gradPlanner" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
@@ -43,6 +43,12 @@
 	    <property name="disciplineDAO" ref="disciplineDAO"/>
 	</bean>	
 	<bean id="disciplineDAO" class="br.com.compositeam.businessmodel.dao.DisciplineDAOImpl">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+	<bean id="userService" class="br.com.compositeam.businessmodel.service.UserService">
+	    <property name="userDAO" ref="userDAO"/>
+	</bean>	
+	<bean id="userDAO" class="br.com.compositeam.businessmodel.dao.UserDAOImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 </beans>
