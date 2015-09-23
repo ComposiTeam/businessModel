@@ -13,7 +13,7 @@ public class DisciplineService {
 
 	private DisciplineDAO disciplineDAO;
 	
-	public void setDisciplineDao(DisciplineDAO disciplineDAO){
+	public void setDisciplineDAO(DisciplineDAO disciplineDAO){
 		this.disciplineDAO = disciplineDAO;
 	}
 	

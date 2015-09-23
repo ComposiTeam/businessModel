@@ -12,17 +12,21 @@ import br.com.compositeam.businessmodel.model.User;
 public class UserService {
 
 	@Autowired
-	private UserDAO userDao;
+	private UserDAO userDAO;
 	
 	public UserService(){
 		
 	}
 	
+	public void setUserDAO(UserDAO userDAO){
+		this.userDAO = userDAO;
+	}
+	
 	public void save(User user){
-		userDao.save(user);
+		userDAO.save(user);
 	}
 	
 	public List<User> getAll(){
-		return userDao.list();
+		return userDAO.list();
 	}
 }
