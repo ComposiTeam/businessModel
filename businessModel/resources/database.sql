@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS gradPlanner; 
 
+
 CREATE TABLE `gradPlanner`.`Discipline` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `cod` VARCHAR(45) NULL,
