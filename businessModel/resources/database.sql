@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS gradPlanner; 
 
-
+/*
 CREATE TABLE `gradPlanner`.`Discipline` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `cod` VARCHAR(45) NULL,
@@ -13,3 +13,4 @@ CREATE TABLE `gradPlanner`.`User` (
   `password` VARCHAR(300) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC));
+*/
