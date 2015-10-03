@@ -3,3 +3,4 @@ sudo docker run -it -p 8081:8080 -v /home/gustavo/deployments:/opt/jboss/wildfly
 ly:latest
 sudo docker inspect mysqldb | grep "IPAddress"
 mysql -u root -proot -h $(sudo docker inspect mysqldb | grep "IPAddress" | cut -d"\"" -f4) < database.sql
+sudo docker run --name server -it -p 8081:8080 --link gradplannerBD:gradplannerBD -v ~/deployments:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildfly:latest
