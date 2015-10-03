@@ -31,20 +31,10 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.current_session_context_class">thread</prop>
 				<prop key="hibernate.show_sql">false</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>
-	<bean id="disciplineService" class="br.com.compositeam.businessmodel.service.DisciplineService">
-	    <property name="disciplineDAO" ref="disciplineDAO"/>
-	</bean>	
-	<bean id="disciplineDAO" class="br.com.compositeam.businessmodel.dao.DisciplineDAOImpl">
-		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</bean>
-	<bean id="userService" class="br.com.compositeam.businessmodel.service.UserService">
-	    <property name="userDAO" ref="userDAO"/>
-	</bean>	
-	<bean id="userDAO" class="br.com.compositeam.businessmodel.dao.UserDAOImpl">
-		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</bean>
+	
+	<import resource="spring-bean.xml"/>
+	
 </beans>

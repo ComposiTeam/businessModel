@@ -1,7 +1,7 @@
 #!/bin/bash
 #variables
 #set the container name
-containerName="mysqldb"
+containerName="gradplannerBD"
 rootPassword="root"
 containerTag="5.5"
 databaseSqlFile="database.sql"

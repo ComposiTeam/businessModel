@@ -3,6 +3,7 @@ package br.com.compositeam.businessmodel.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import br.com.compositeam.businessmodel.dao.UserDAO;
@@ -11,7 +12,6 @@ import br.com.compositeam.businessmodel.model.User;
 @Service
 public class UserService {
 
-	@Autowired
 	private UserDAO userDAO;
 	
 	public UserService(){
@@ -29,4 +29,10 @@ public class UserService {
 	public List<User> getAll(){
 		return userDAO.list();
 	}
+	
+	public boolean login(User user){
+		return userDAO.login(user);
+	}
+	
+	
 }

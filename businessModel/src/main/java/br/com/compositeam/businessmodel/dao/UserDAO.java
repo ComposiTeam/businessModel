@@ -9,4 +9,6 @@ public interface UserDAO {
 	public void save(User user);
     
     public List<User> list();
+    
+    public boolean login(User user);
 }

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 @Entity
 @Table(name = "User")
 public class User {
@@ -46,5 +48,9 @@ public class User {
 		this.email = email;
 	}
 	
-	
+	public String getEncryPassword(){
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String hashedPassword = passwordEncoder.encode(this.getPassword());
+		return hashedPassword;
+	}
 }
