@@ -20,12 +20,12 @@ public class UserServiceTest {
 	@Test
 	public void testService() {
 		User user = new User();
-		user.setEmail("test43_test@email");
+		user.setEmail("test7743_test@email");
 		user.setPassword("12345");
 		UserService service = context.getBean(UserService.class);
 		service.save(user);
 		user = new User();
-		user.setEmail("tes22t@email");
+		user.setEmail("tes2772t@email");
 		user.setPassword("12345");
 		service.save(user);
 	}
