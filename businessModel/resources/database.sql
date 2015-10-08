@@ -27,17 +27,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`TranscriptOfRecords` (
   `idTranscriptOfRecords` INT NOT NULL COMMENT '',
   PRIMARY KEY (`idTranscriptOfRecords`)  COMMENT '')
 
-
--- -----------------------------------------------------
--- Table `gradPlanner`.`User`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `gradPlanner`.`User` (
-  `idUser` INT NOT NULL COMMENT '',
-  `email` VARCHAR(45) NULL COMMENT '',
-  `password` VARCHAR(45) NULL COMMENT '',
-  PRIMARY KEY (`idUser`)  COMMENT '')
-
-
+  
 -- -----------------------------------------------------
 -- Table `gradPlanner`.`Person`
 -- -----------------------------------------------------
