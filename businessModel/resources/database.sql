@@ -13,21 +13,17 @@ CREATE TABLE `gradPlanner`.`Discipline` (
 -- Table `gradPlanner`.`User`
 -- -----------------------------------------------------
 CREATE TABLE `gradPlanner`.`User` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `idUser` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
   `password`  BLOB NOT  NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`idUser`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC));
   
-
--- -----------------------------------------------------
--- Table `gradPlanner`.`TranscriptOfRecords`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gradPlanner`.`TranscriptOfRecords` (
   `idTranscriptOfRecords` INT NOT NULL COMMENT '',
   PRIMARY KEY (`idTranscriptOfRecords`)  COMMENT '')
+ENGINE = InnoDB;
 
-  
 -- -----------------------------------------------------
 -- Table `gradPlanner`.`Person`
 -- -----------------------------------------------------
@@ -42,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Person` (
     REFERENCES `gradPlanner`.`User` (`idUser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -66,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Student` (
     REFERENCES `gradPlanner`.`Person` (`idPerson`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -76,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`ClassPeriod` (
   `semester` INT NULL COMMENT '',
   `academicYear` INT NULL COMMENT '',
   PRIMARY KEY (`idClassPeriod`)  COMMENT '')
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -84,6 +83,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`ClassPeriod` (
 CREATE TABLE IF NOT EXISTS `gradPlanner`.`ClassSchedule` (
   `idClassSchedule` INT NOT NULL COMMENT '',
   PRIMARY KEY (`idClassSchedule`)  COMMENT '')
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -106,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Class` (
     REFERENCES `gradPlanner`.`ClassSchedule` (`idClassSchedule`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -116,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Mention` (
   `abreviation` VARCHAR(3) NULL COMMENT '',
   `heaviness` INT NULL COMMENT '',
   PRIMARY KEY (`idMention`)  COMMENT '')
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -151,6 +153,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Result` (
     REFERENCES `gradPlanner`.`TranscriptOfRecords` (`idTranscriptOfRecords`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -159,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Result` (
 CREATE TABLE IF NOT EXISTS `gradPlanner`.`Matrix` (
   `idMatrix` INT NOT NULL COMMENT '',
   PRIMARY KEY (`idMatrix`)  COMMENT '')
-
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -182,6 +185,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Discipline` (
     REFERENCES `gradPlanner`.`Matrix` (`idMatrix`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -199,6 +203,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Feedback` (
     REFERENCES `gradPlanner`.`User` (`idUser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -214,6 +219,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Teacher` (
     REFERENCES `gradPlanner`.`Person` (`idPerson`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -222,6 +228,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Teacher` (
 CREATE TABLE IF NOT EXISTS `gradPlanner`.`Grid` (
   `idGrid` INT NOT NULL COMMENT '',
   PRIMARY KEY (`idGrid`)  COMMENT '')
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -243,6 +250,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Grid_has_Class` (
     REFERENCES `gradPlanner`.`Class` (`idClass`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -258,6 +266,7 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Offer` (
     REFERENCES `gradPlanner`.`ClassPeriod` (`idClassPeriod`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -279,4 +288,4 @@ CREATE TABLE IF NOT EXISTS `gradPlanner`.`Offer_has_Class` (
     REFERENCES `gradPlanner`.`Class` (`idClass`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-
+ENGINE = InnoDB;
