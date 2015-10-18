@@ -38,7 +38,7 @@ public class RoleDAOImpl implements RoleDAO {
 	
 	public Role getRole(String description){
 		Session session = this.sessionFactory.openSession();
-		Role role = (Role)session.createCriteria(Role.class).add(Restrictions.eq("role", description)).uniqueResult();
+		Role role = (Role)session.createCriteria(Role.class).add(Restrictions.eq("description", description)).uniqueResult();
 		if(role == null){
 			LOGGER.info("There is not a result from query to find a user");
 		}
@@ -58,6 +58,12 @@ public class RoleDAOImpl implements RoleDAO {
 		r.setDescription(role);
 		this.save(r);
 		return r;
+	}
+
+	public void update(Role role) {
+		Session session = this.sessionFactory.openSession();
+		session.update(role);
+		session.close();
 	}
 
 }

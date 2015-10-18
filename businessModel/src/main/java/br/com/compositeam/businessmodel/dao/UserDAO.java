@@ -11,4 +11,6 @@ public interface UserDAO {
     public List<User> list();
     
     public boolean login(User user);
+    
+    public User getUser(String email);
 }

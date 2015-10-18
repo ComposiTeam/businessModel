@@ -34,5 +34,9 @@ public class UserService {
 		return userDAO.login(user);
 	}
 	
+	public User getUser(String email){
+		return userDAO.getUser(email);
+	}
+	
 	
 }

@@ -2,6 +2,7 @@ package br.com.compositeam.businessmodel.service;
 
 import junit.framework.Assert;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,6 +18,11 @@ public class RoleServiceTest {
 	public void setUp(){
 		context = new ClassPathXmlApplicationContext("spring.xml");
 		service = context.getBean(RoleService.class);
+	}
+	
+	@After
+	public void tearDown(){
+		context.close();
 	}
 	
 	@Test

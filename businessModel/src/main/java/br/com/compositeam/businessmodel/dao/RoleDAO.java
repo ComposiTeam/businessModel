@@ -16,4 +16,6 @@ public interface RoleDAO {
     
     
     public Role getRole(String role);
+    
+    public void update(Role role);
 }

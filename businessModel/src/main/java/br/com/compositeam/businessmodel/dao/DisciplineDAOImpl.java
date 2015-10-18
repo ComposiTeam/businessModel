@@ -17,6 +17,7 @@ import br.com.compositeam.businessmodel.service.DisciplineService;
 
 @Service
 public class DisciplineDAOImpl implements DisciplineDAO{
+	
 	private SessionFactory sessionFactory;
 	
 	
