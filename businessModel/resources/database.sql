@@ -28,6 +28,15 @@ CREATE TABLE `gradPlanner`.`USER_ROLE` (
   PRIMARY KEY (`id_role`,`id_user`),
   CONSTRAINT FK_ROLE FOREIGN KEY (id_role) REFERENCES gradPlanner.Role(id_role),
   CONSTRAINT FK_USER FOREIGN KEY (id_user) REFERENCES gradPlanner.User(id_user)
- );  
+ );
+ 
+CREATE TABLE `gradPlanner`.`Person` (
+  `id_person` INT NOT NULL AUTO_INCREMENT,
+  `id_user` INT NOT NULL,
+  `name` VARCHAR(200) NOT NULL,
+  `surname`  VARCHAR(200)  NULL,
+  PRIMARY KEY (`id_person`),
+  CONSTRAINT FK_USER_PERSON FOREIGN KEY (id_user) REFERENCES gradPlanner.User(id_user)
+);
   
 INSERT INTO `gradPlanner`.`Role`(role) VALUES ("NORMAL_USER");

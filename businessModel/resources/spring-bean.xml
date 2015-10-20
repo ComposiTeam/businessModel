@@ -24,4 +24,10 @@
 	<bean id="roleDAO" class="br.com.compositeam.businessmodel.dao.RoleDAOImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
+	<bean id="personService" class="br.com.compositeam.businessmodel.service.PersonService">
+	    <property name="personDAO" ref="personDAO"/>
+	</bean>	
+	<bean id="personDAO" class="br.com.compositeam.businessmodel.dao.PersonDAOImpl">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
 </beans>
