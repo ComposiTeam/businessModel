@@ -74,4 +74,13 @@ public class UserDAOImpl implements UserDAO {
 		boolean exists = session.createCriteria(User.class).equals(user);
 		return exists;
 	}
+
+	public void delete(User user) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.delete(user);
+		tx.commit();
+		session.close();
+		
+	}
 }

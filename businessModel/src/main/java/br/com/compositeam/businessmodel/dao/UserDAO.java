@@ -13,4 +13,6 @@ public interface UserDAO {
     public boolean login(User user);
     
     public User getUser(String email);
+    
+    public void delete(User user);
 }
